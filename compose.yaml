@@ -1,0 +1,13 @@
+services:
+  attendee:
+    build:
+      context: .
+      target: production
+    image: ghcr.io/groskopf/onsite-print-attendee:${IMAGE_TAG:?Set IMAGE_TAG in .env}
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/attendee/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
