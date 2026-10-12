@@ -70,3 +70,13 @@ permission, and run `bash docker-push.sh`. `GHCR_USERNAME` defaults to `groskopf
 The image is `ghcr.io/groskopf/onsite-print-attendee:<IMAGE_TAG>`.
 
 See the server repo's README for image-only deployment and HTTPS setup.
+
+## Test the publishing script
+
+```sh
+bash tests/docker-push-test.sh
+```
+
+GitHub Actions runs these tests on pushes and pull requests against this repo's
+own script. They use a mocked Docker CLI, do not build or upload images, and
+require no credentials or sibling repositories.
