@@ -10,7 +10,8 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "test": "node --test tests/attendee-api.test.js"
     },
     "dependencies": {
         "qrcode.react": "^4.2.0",
